@@ -27,7 +27,6 @@ contract Exchange is ERC20 {
             _mint(msg.sender, lpTokensToMint);
 
             return lpTokensToMint;
-
         }
 
         uint256 ethReservePriorToFunctionCall = ethReserveBalance - msg.value;
@@ -114,5 +113,6 @@ function tokenToEthSwap(
     );
     payable(msg.sender).transfer(ethToReceive);
   }
+
 
 }
