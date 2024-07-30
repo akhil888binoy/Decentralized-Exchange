@@ -218,24 +218,22 @@ export default function Home() {
   if (!isConnected)
     return (
       <div
-        className={` bg-[url('/mainbackground.jpg')] bg-cover bg-center min-h-screen`}
+        className={`bg-[url('/mainbackground.jpg')] bg-cover bg-center min-h-screen`}
       >
         <div className="container mx-auto p-4">
           <div className="text-center mb-8">
             <h1 className="text-9xl font-mono font-semibold text-white">DEX</h1>
           </div>
-          <div className="flex justify-between items-center mt-10 bg-black bg-opacity-10 p-6 rounded-lg shadow-lg">
-            <div className="w-3/5">
+          <div className="flex flex-col lg:flex-row justify-between items-center mt-10 bg-black bg-opacity-50 p-6 rounded-lg shadow-lg">
+            <div className="lg:w-3/5 w-full mb-6 lg:mb-0">
               <p className="text-white font-mono text-lg leading-relaxed">
-                Welcome to Lockie – the decentralized solution for securely
-                storing and retrieving question papers. Our platform leverages
-                the power of IPFS and blockchain technology to ensure that your
-                documents are safely stored and easily accessible. With Lockie,
-                you can confidently upload your question papers, store their
-                IPFS hashes on the blockchain, and retrieve them anytime using a
-                unique index number. Embrace the future of secure academic
-                storage and enjoy a seamless, tamper-proof experience with
-                Lockie.
+                Welcome to the DEX project – a decentralized exchange platform
+                that allows users to swap ETH and tokens seamlessly. Our DEX
+                leverages the Automated Market Maker (AMM) model, ensuring
+                liquidity and fair trading. Users can provide liquidity and earn
+                rewards, with all transactions happening directly on the
+                blockchain. Join our DEX and experience a secure, efficient, and
+                transparent way to trade cryptocurrencies.
               </p>
               <div className="mt-5">
                 <ConnectButton />
@@ -262,14 +260,25 @@ export default function Home() {
         </div>
 
         <div className="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg mb-6">
-          <p>Reserve of Token TKN in pool: {Number(reserve)}</p>
-          <p className="break-words">Address of Token: {TokenAddress}</p>
-          <p>Total Lp Tokens Minted: {Number(LpTokensInPool)}</p>
-          <p className="break-words">
-            TKN held by {address}: {Number(tokenBalanceOfUser)}
+          <p className="text-white text-lg mb-2">
+            <span className="font-semibold">Reserve of Token TKN in pool:</span>{" "}
+            {Number(reserve)}
           </p>
-          <p className="break-words">
-            LpToken held by {address}: {Number(lptokenBalanceOfUser)}
+          <p className="text-white text-lg mb-2 break-words">
+            <span className="font-semibold">Address of Token:</span>{" "}
+            {TokenAddress}
+          </p>
+          <p className="text-white text-lg mb-2">
+            <span className="font-semibold">Total LP Tokens Minted:</span>{" "}
+            {Number(LpTokensInPool)}
+          </p>
+          <p className="text-white text-lg mb-2 break-words">
+            <span className="font-semibold">Token TKN held by {address}:</span>{" "}
+            {Number(tokenBalanceOfUser)}
+          </p>
+          <p className="text-white text-lg break-words">
+            <span className="font-semibold">LP Token held by {address}:</span>{" "}
+            {Number(lptokenBalanceOfUser)}
           </p>
         </div>
 
@@ -278,7 +287,7 @@ export default function Home() {
             <label className="block mb-2">Add Liquidity</label>
             <input
               className="text-black mb-2 p-2 w-full rounded"
-              placeholder="Add Token"
+              placeholder="Add Token TKN"
               type="number"
               value={amountToken}
               onChange={(e) => setAmountToken(e.target.value)}
@@ -300,10 +309,10 @@ export default function Home() {
           </div>
 
           <div className="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg">
-            <label className="block mb-2">ETH to Token Swap</label>
+            <label className="block mb-2">ETH to Token TKN Swap</label>
             <input
               className="text-black mb-2 p-2 w-full rounded"
-              placeholder="Min Token To Receive"
+              placeholder="Min Token TKN To Receive"
               type="number"
               value={minTokensToReceive}
               onChange={(e) => setMinTokensToReceive(e.target.value)}
@@ -325,7 +334,7 @@ export default function Home() {
           </div>
 
           <div className="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg">
-            <label className="block mb-2">Token to ETH Swap</label>
+            <label className="block mb-2">Token TKN to ETH Swap</label>
             <input
               className="text-black mb-2 p-2 w-full rounded"
               placeholder="Min ETH To Receive"
@@ -335,7 +344,7 @@ export default function Home() {
             />
             <input
               className="text-black mb-2 p-2 w-full rounded"
-              placeholder="Token To Swap"
+              placeholder="Token TKN To Swap"
               type="number"
               value={amountswapToken}
               onChange={(e) => setAmountSwapToken(e.target.value)}
